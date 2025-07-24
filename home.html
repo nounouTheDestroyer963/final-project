@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags for character encoding and responsive design -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Page title -->
+  <title>Porsche Dealership</title>
+
+  <!-- Google Font for the heading style -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Basic body styling */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+    }
+
+    /* Navigation bar styling */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 15px 30px;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Logo image styling */
+    .logo {
+      height: 50px;
+    }
+
+    /* Navigation list styling */
+    .nav-bar {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* List item in navigation */
+    .nav-bar li {
+      position: relative;
+    }
+
+    /* Nav links styling */
+    .nav-bar a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 14px;
+      background-color: #444;
+      border-radius: 10px;
+      transition: 0.4s;
+      font-size: 14px;
+    }
+
+    /* Hover effect for nav links */
+    .nav-bar a:hover {
+      background-color: #fff;
+      color: #c00;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Dropdown menu wrapper */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Hidden dropdown content */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #222;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+      padding: 12px 0;
+      z-index: 999;
+      border-radius: 8px;
+    }
+
+    /* Show dropdown on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Links inside dropdown */
+    .dropdown-content a {
+      color: #fff;
+      padding: 12px 16px;
+      display: block;
+      text-decoration: none;
+    }
+
+    /* Hover effect for dropdown items */
+    .dropdown-content a:hover {
+      background-color: #333;
+      color: gold;
+    }
+
+    /* Section containing the video */
+    .section1 {
+      margin-top: 80px; /* space under the fixed navbar */
+      position: relative;
+    }
+
+    /* Full-width background video */
+    #video-ad {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Button to toggle mute on the video */
+    #unmuteButton {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background-color: #c00;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Hover effect for the mute button */
+    #unmuteButton:hover {
+      background-color: #fff;
+      color: #c00;
+    }
+
+    /* Welcome text positioned on top of the video */
+    .welcome-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Orbitron', sans-serif;
+      font-size: 48px;
+      color: #f45858;
+      text-shadow: 2px 2px 10px #000;
+      z-index: 1;
+      letter-spacing: 3px;
+      text-align: center;
+    }
+
+    /* Styling for about section content */
+    .about-content {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    /* Contact section styling */
+    .contact {
+      background-color: #b33131;
+      color: #000;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      margin-bottom: 10px;
+    }
+
+    .contact a {
+      color: #000;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    /* Responsive styling for smaller screens */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-bar {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .nav-bar a {
+        display: block;
+        width: 100%;
+      }
+
+      .logo {
+        margin-bottom: 10px;
+      }
+
+      #unmuteButton {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      .welcome-text {
+        font-size: 32px;
+        padding: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top navigation bar -->
+  <nav>
+    <!-- Left logo -->
+    <img src="https://res.cloudinary.com/dstezjkxg/image/upload/v1753201517/porsche-crest.2245c45_2x_j6wyd1.webp" alt="Porsche Logo" class="logo">
+    
+    <!-- Navigation links -->
+    <ul class="nav-bar">
+      <li><a href="./home.html">Home</a></li>
+      <!-- Dropdown menu for car models -->
+      <li class="dropdown">
+        <a href="./models.html">Models ▾</a>
+        <div class="dropdown-content">
+        <a href="./models.html#911">911 Models</a>
+        <a href="./models.html#718">718 Models</a>
+        <a href="./models.html#taycan&macan">Taycan Models & Macan</a>
+        <a href="./models.html#panamera">Panamera</a>
+      </div>
+      </li>
+      <li><a href="./contact.html">Contact US</a></li>
+      <li><a href="./quiz.html">Quiz</a></li>
+    </ul>
+
+    <!-- Right logo -->
+    <img src="https://res.cloudinary.com/dstezjkxg/image/upload/v1753201517/porsche-crest.2245c45_2x_j6wyd1.webp" alt="Porsche Logo" class="logo">
+  </nav>
+
+  <!-- Hero section with video and welcome message -->
+  <section class="section1">
+    <!-- Autoplay background video -->
+    <video autoplay muted loop id="video-ad">
+      <source src="https://res.cloudinary.com/dstezjkxg/video/upload/v1753201522/The_new_911._The_one_and_always._cp1kba.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Main heading overlayed on video -->
+    <h1 class="welcome-text">Welcome Aboard</h1>
+
+    <!-- Button to toggle mute on the video -->
+    <button id="unmuteButton" onclick="toggleMute()">Unmute</button>
+  </section>
+
+  <!-- Footer with about section -->
+  <footer>
+    <section class="about" id="about">
+      <div class="about-content">
+        <!-- About Porsche information -->
+        <span class="text-ui-brand-color" style="color:#af6051"><span style="font-weight:bold">ABOUT PORSCHE</span></span>
+        <p>Welcome to the world of Porsche, where innovation, performance, and timeless design converge to create automotive excellence.
+           Since 1948, Porsche has been synonymous with precision
+           engineering, pushing the boundaries of what’s possible on the road and the track.</p>
+        <p>Porsche is more than just a car manufacturer; it’s a lifestyle. From the roar of its engines to the sleek curves of its design,
+           every Porsche is crafted to deliver an unforgettable driving experience. With a rich heritage rooted in motorsport,
+            Porsche has claimed countless victories in races like the 24 Hours
+           of Le Mans, proving that its cars are built to perform under the most demanding conditions.</p>
+        <p>Founded by Ferdinand Porsche, the brand has become a global icon, celebrated for its iconic sports cars, 
+          including the legendary 911, the versatile Cayenne, the dynamic Macan, and the groundbreaking all-electric Taycan.
+           Each vehicle embodies the spirit of Porsche: a relentless pursuit of perfection, 
+          a passion for driving, and a commitment to sustainability.</p>
+      </div>
+    </section>
+  </footer>
+
+  <!-- JavaScript function to mute/unmute the background video -->
+  <script>
+    function toggleMute() {
+      const video = document.getElementById('video-ad');
+      // Toggle mute state
+      video.muted = !video.muted;
+      // Change button text based on mute status
+      document.getElementById('unmuteButton').textContent = video.muted ? 'Unmute' : 'Mute';
+    }
+  </script>
+
+</body>
+</html>

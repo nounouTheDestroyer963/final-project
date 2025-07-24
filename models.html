@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> <!-- Character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design -->
+  <title>Toyota Cars with Video</title> <!-- Page title -->
+
+  <!-- Embedded CSS for styling -->
+  <style>
+    /* Global body style */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+    }
+
+    /* Top navigation bar fixed at top */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 12px 30px;
+      z-index: 1000;
+    }
+
+    /* Logo style */
+    .logo {
+      height: 50px;
+    }
+
+    /* Navigation list */
+    .nav-bar {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-bar li {
+      position: relative;
+    }
+
+    /* Navigation links */
+    .nav-bar a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 14px;
+      background-color: #333;
+      border-radius: 8px;
+      transition: 0.3s ease;
+      font-size: 14px;
+    }
+
+    .nav-bar a:hover {
+      background-color: #fff;
+      color: #c00;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Dropdown content styling */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #222;
+      min-width: 160px;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+    }
+
+    /* Show dropdown on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Dropdown links */
+    .dropdown-content a {
+      color: #fff;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #333;
+      color: gold;
+    }
+
+    /* Main car section layout */
+    .section2 {
+      margin-top: 100px; /* Avoid overlap with fixed nav */
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      padding: 0 30px 60px;
+    }
+
+    /* Individual car card */
+    .car {
+      background-color: #444;
+      border: 1px solid #999;
+      border-radius: 15px;
+      overflow: hidden;
+      width: 28%;
+      height: 750px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      padding-bottom: 15px;
+    }
+
+    /* Hover effect on car card */
+    .car:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+    }
+
+    /* Car image */
+    .car img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    h3, h4 {
+      margin: 12px 0;
+    }
+
+    /* Section for specs and reviews */
+    .technical-sheet, .reviews {
+      padding: 0 15px;
+      text-align: left;
+    }
+
+    .technical-sheet ul {
+      padding-left: 20px;
+    }
+
+    .reviews p {
+      margin: 0;
+    }
+
+    /* Responsive: tablets */
+    @media screen and (max-width: 992px) {
+      .car {
+        width: 45%;
+      }
+    }
+
+    /* Responsive: mobile */
+    @media screen and (max-width: 600px) {
+      .car {
+        width: 90%;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .nav-bar {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- =================== NAVIGATION =================== -->
+<nav>
+  <!-- Left Logo -->
+  <img src="https://res.cloudinary.com/dstezjkxg/image/upload/v1753201517/porsche-crest.2245c45_2x_j6wyd1.webp" alt="Porsche Logo" class="logo">
+
+  <!-- Navigation Menu -->
+  <ul class="nav-bar">
+    <li><a href="./home.html">Home</a></li>
+
+    <!-- Dropdown for models -->
+    <li class="dropdown">
+      <a href="./models.html">Models ▾</a>
+      <div class="dropdown-content">
+        <a href="./models.html#911">911 Models</a>
+        <a href="./models.html#718">718 Models</a>
+        <a href="./models.html#taycan&macan">Taycan Models & Macan</a>
+        <a href="./models.html#panamera">Panamera</a>
+      </div>
+    </li>
+
+    <li><a href="./contact.html">Contact US</a></li>
+    <li><a href="./quiz.html">Quiz</a></li>
+  </ul>
+
+  <!-- Right Logo -->
+  <img src="https://res.cloudinary.com/dstezjkxg/image/upload/v1753201517/porsche-crest.2245c45_2x_j6wyd1.webp" alt="Porsche Logo" class="logo">
+</nav>
+
+  
+  <section class="section2">
+    <!--the 911 cars-->
+    <div class="car" id="911">
+      <!--the 911 carrera-->
+      <h3>911 Carrera</h3>
+      <img src="https://res.cloudinary.com/dstezjkxg/image/upload/v1753269756/5D0BB7E042BD4C9DBEF84B5E70482520_73AA748306934B0C9CE20E32231DFCE2_CZ25W01IX0011911-carrera-front_tmqglx.avif" alt="911 Carrera">
+      <div class="technical-sheet">
+        <h4>Technical Sheet</h4>
+        <ul>
+          <li>Engine: 3.0-liter twin-turbocharged </li>
+          <li>Horsepower: 394 PS (290 kW)</li>
+          <li>Transmission: 8-speed automatic (PDK) or 7-speed manual </li>
+          <li>Drive Type: (RWD) Rear-wheel drive or (AWD) all-wheel drive. </li>
+        </ul>
+      </div>
+            <div class="reviews">
+        <h4>Reviews</h4>
+        <p>"Reviewers highlight its quick acceleration, precise steering, and strong braking, even when compared to higher-spec models.
+           The 911 Carrera T, with its focus on lightweight construction and puristic driving pleasure,
+           is also praised for its agility and engaging driving experience. "</p>
+      </div>
+    </div>
+    <div class="car">
+      <!--the 911 gt3rs-->
+      <h3>911 GT3rs</h3>
+      <img src="https://res.cloudinary.com/dstezjkxg/image/upload/v1753270427/B93C187F3156400E87B5523771B7E93B_F61A787D90F94CDCAA8F243502D3C4B2_911-gt3-rs-front_1_-Photoroom_cqmkpt.png" alt="911 GT3rs">
+      <div class="technical-sheet">
+        <h4>Technical Sheet</h4>
+        <ul>
+          <li>Engine: 4.0-liter naturally aspirated flat-six engine</li>
+          <li>Horsepower:  518 horsepower</li>
+          <li>Transmission: 7-speed Porsche Doppelkupplung (PDK)</li>
+          <li>Drive Type: (RWD) Rear-wheel drive</li>
+        </ul>
+      </div>
+      <div class="reviews">
+        <h4>Reviews</h4>
+        <p>"Porsche 911 GT3 RS is a track-focused, high-performance sports car known for its exceptional downforce, grip, and precision handling."</p>
+      </div>
+    </div>
+    <div class="car">
+      <!--the 911 targa 4s-->
+      <h3>911 Targa 4S</h3>
+      <img src="https://res.cloudinary.com/dstezjkxg/image/upload/v1753289456/F1B62A9C17944DE28B8A6233A2DDD032_ADAEB97618464B6A94BEE9526ADBE8BC_CZ26W07IX0011-911-targa-4s-front_pdqzpz.avif" alt="911 Targa 4S">
+      <div class="technical-sheet">
+        <h4>Technical Sheet</h4>
+        <ul>
+          <li>Engine: 3.0-liter twin-turbocharged flat-6 engine </li>
+          <li>Horsepower:450 horsepower </li>
+          <li>Transmission: 8-speed Porsche Doppelkupplung (PDK)</li>
+          <li>Drive Type:  All-Wheel Drive (AWD) </li>
+        </ul>
+      </div>
+      <div class="reviews">
+        <h4>Reviews</h4>
+        <p>"The 911 Targa 4S is a high-performance sports car from Porsche, known for its unique Targa top design and all-wheel drive."</p>
+      </div>
+    
+    
+    </div>
+    <!--the 718 models-->
+    <div class="car" id="718">
+      <!--the 718 cayman gt4rs-->
+      <h3>718 Cayman GT4 RS</h3>
+      <img src="https://res.cloudinary.com/dstezjkxg/image/upload/v1753302451/d1020d49-7ddc-4565-8077-3e013103101d_removalai_preview_teexdr.png" alt="718 Cayman GT4 RS">
+      <div class="technical-sheet">
+        <h4>Technical Sheet</h4>
+        <ul>
+          <li>Engine:  4.0-liter six-cylinder naturally aspirated boxer engine.</li>
+          <li>Horsepower: 493 horsepower</li>
+          <li>Transmission:  Seven-speed PDK (Porsche Doppelkupplung) dual-clutch transmission.</li>
+          <li>Drive Type: (RWD) Rear-wheel drive</li>
+        </ul>
+      </div>
+      <div class="reviews">
+        <h4>Reviews</h4>
+        <p>"Reviews highlight its exceptional handling, responsiveness, and the thrilling experience delivered by its high-revving engine. "</p>
+      </div>
+    </div>
+    <div class="car">
+      <!--the 718 boxster-->
+      <h3>718 Boxster</h3>
+      <img src="https://res.cloudinary.com/dstezjkxg/image/upload/v1753303350/161-1618332_porsche-718-boxster-png-transparent-png_rt9hl7.webp" alt="718 Boxster">
+      <div class="technical-sheet">
+        <h4>Technical Sheet</h4>
+        <ul>
+          <li>Engine:  2.5-liter turbocharged flat-four</li>
+          <li>Horsepower: 300 horsepower</li>
+          <li>Transmission: 6-speed manual transmission with dual-mass flywheel </li>
+          <li>Drive Type: (RWD) Rear-wheel drive</li>
+        </ul>
+      </div>
+      <div class="reviews">
+        <h4>Reviews</h4>
+        <p>"The Porsche 718 Boxster offers a compelling blend of performance and driving enjoyment, with various engine options and a well-honed chassis. 
+          Reviewers highlight its quick acceleration, responsive handling, and engaging driving experience,
+           particularly with the optional Porsche Torque Vectoring system. "</p>
+      </div>
+    </div>
+    <div class="car">
+      <!--the 718 spyder rs-->
+      <h3>718 Spyder RS</h3>
+      <img src="https://res.cloudinary.com/dstezjkxg/image/upload/v1753304887/6b25b697-f1a4-4a93-8aed-6ec8d1237bcc_removalai_preview_bpvkgz.png" alt="718 Spyder RS">
+      <div class="technical-sheet">
+        <h4>Technical Sheet</h4>
+        <ul>
+          <li>Engine: Naturally aspirated 4.0-liter flat-six engine</li>
+          <li>Horsepower: 493 horsepower</li>
+          <li>Transmission: 7-speed Porsche Doppelkupplung (PDK) automatic </li>
+          <li>Drive Type: (RWD) Rear-wheel drive</li>
+        </ul>
+      </div>
+      <div class="reviews">
+        <h4>Reviews</h4>
+        <p>" Reviewers praise its sharp handling, responsive steering, and the thrilling sound of the engine, particularly when the top is down. "</p>
+      </div>
+    </div>
+    <!--the taycan & macan-->
+    <div class="car" id="taycan&macan">
+      <!--the taycan-->
+      <h3>Taycan</h3>
+      <img src="https://res.cloudinary.com/dstezjkxg/image/upload/v1753306916/8BEAA9C5AB93489C8F2415AE4C9329F1_E6EBE63671454993B0EE5F266B68893B_TA24Q3BIX0011-taycan-front_sknjf8.avif" alt="Taycan">
+      <div class="technical-sheet">
+        <h4>Technical Sheet</h4>
+        <ul>
+          <li>Engine: Permanent Magnet Synchronous Motor (PMSM) </li>
+          <li>Horsepower: 402 horsepower</li>
+          <li>Drive Type: (AWD) all-wheel-drive system</li>
+        </ul>
+      </div>
+      <div class="reviews">
+        <h4>Reviews</h4>
+        <p>"Reviews often highlight its impressive performance, particularly the Turbo S model's acceleration with launch control,
+           while also noting its comfortable ride and well-appointed interior."</p>
+      </div>
+    </div>
+    <div class="car">
+      <!--Taycan 4 Cross Turismo-->
+      <h3>Taycan 4 Cross Turismo</h3>
+      <img src="https://res.cloudinary.com/dstezjkxg/image/upload/v1753308790/D18B71A935904C1BB192005CBCADF458_A3BF8B2F668A4C56836C983765B075C8_TA24Q3LIX0011-taycan-4-cross-turismo-front_edvhfj.avif" alt="Taycan 4 Cross Turismo">
+      <div class="technical-sheet">
+        <h4>Technical Sheet</h4>
+        <ul>
+          <li>Engine: Two electric motors, one on the front axle and one on the rear axle.</li>
+          <li>Horsepower: 429 horsepower</li>
+          <li>Drive Type: (AWD) all-wheel-drive system</li>
+        </ul>
+      </div>
+      <div class="reviews">
+        <h4>Reviews</h4>
+        <p>"Reviewers highlight its impressive acceleration, composed handling, and refined interior, while also noting the versatility offered by the increased cargo space and ride height compared to the standard Taycan sedan. "</p>
+      </div>
+    </div>
+        <div class="car">
+          <!--Macan Electric-->
+          <h3>Macan Electric</h3>
+          <img src="https://res.cloudinary.com/dstezjkxg/image/upload/v1753309040/32FA52EA1F324CD1B577A436AFBBB33A_69A98F22B46A4AF29DBB3CBC8C68E07E_macan-front_pz8v9w.avif" alt="Macan Electric">
+          <div class="technical-sheet">
+            <h4>Technical Sheet</h4>
+            <ul>
+              <li>Engine: Two electric motors, one on the front axle and one on the rear axle.</li>
+              <li>Horsepower: 355 horsepower</li>
+              <li>Drive Type: (RWD) Rear-wheel drive</li>
+            </ul>
+          </div>
+          <div class="reviews">
+            <h4>Reviews</h4>
+            <p>"The Porsche Macan Electric offers impressive technical specifications, particularly in its powertrain and charging capabilities, while also incorporating advanced technology and features."</p>
+          </div>
+        </div>
+    
+        <!-- the panamera cars -->
+        <div class="car" id="panamera">
+          <!--Panamera 4 E-Hybrid-->
+          <h3>Panamera 4 E-Hybrid</h3>
+          <img src="https://res.cloudinary.com/dstezjkxg/image/upload/v1753309579/033BFBA2CA474497AF157A7FE2B03E3E_A89F4E7DA00544A79F03D14E843FC12B_045-model-technical-highlights-1600x1125_dark_akwqpj.avif" alt="Panamera 4 E-Hybrid">
+          <div class="technical-sheet">
+            <h4>Technical Sheet</h4>
+            <ul>
+              <li>Engine: 2.9-liter twin-turbo V6 paired with an electric motor.</li>
+              <li>Horsepower: 463 horsepower</li>
+              <li>Transmission: 8-speed dual-clutch automatic</li>
+              <li>Drive Type: (AWD) All-wheel drive</li>
+            </ul>
+          </div>
+          <div class="reviews">
+            <h4>Reviews</h4>
+            <p>"Reviews highlight its impressive performance, smooth hybrid integration, and advanced technology."</p>
+          </div>
+        </div>
+            
+    <div class="car">
+      <!--Panamera 4 E-Hybrid Executive-->
+      <h3>Panamera 4 E-Hybrid Executive</h3>
+      <img src="https://res.cloudinary.com/dstezjkxg/image/upload/v1753310219/BA24503DF52E4C3DBC88D6F451A6161D_F9DD26EFD4294BA2B33BB090FE7CF19C_045-panamera-4-e-hybrid-model-technical-highlights-1600x1125_vw9nzn.avif" alt="Panamera 4 E-Hybrid Executive">
+      <div class="technical-sheet">
+        <h4>Technical Sheet</h4>
+        <ul>
+          <li>Engine: 2.9-liter twin-turbo V6 engine paired with an electric motor</li>
+          <li>Horsepower: 463 horsepower</li>
+          <li>Transmission:  8-speed Porsche Doppelkupplung (PDK) transmission</li>
+          <li>Drive Type: (AWD) All-wheel drive </li>
+        </ul>
+      </div>
+      <div class="reviews">
+        <h4>Reviews</h4>
+        <p>"The Porsche Panamera 4 E-Hybrid Executive is a plug-in hybrid model known for its combination of performance and rear-seat comfort, with an extended wheelbase."</p>
+      </div>
+    </div>  
+    <div class="car">
+      <!--the gt one-->
+      <h3>GT 1</h3>
+      <img src="https://res.cloudinary.com/dstezjkxg/image/upload/v1753310708/Tuthill_GT_One_reveal-5_hocpsu.png" alt="GT 1">
+      <div class="technical-sheet">
+        <h4>Technical Sheet</h4>
+        <ul>
+          <li>Engine: 3.2 L (200 cu in) water-cooled, Porsche 9R1 flat-6, twin-turbocharged, mid-engine.</li>
+          <li>Horsepower: 549.9 bhp</li>
+          <li>Transmission: 6-speed </li>
+          <li>Drive Type: (RWD) Rear-wheel-drive vehicle. </li>  
+        </ul>
+      </div>
+      <div class="reviews">
+        <h4>Reviews</h4>
+        <p>"The Tuthill GT One is a blending classic race car aesthetics with modern engineering."</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
